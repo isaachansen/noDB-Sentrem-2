@@ -1,0 +1,111 @@
+[
+    {
+        "id": "1",
+        "brandName": "Saint Laurent",
+        "clothingName": "Wyatt leather chelsea boots",
+        "clothingImage": "https://assetsprx.matchesfashion.com/img/product/1311500_1_large.jpg",
+        "price": "$895.00",
+        "description": "The black Wyatt chelsea boot is an essential for any Saint Laurent aficionado. It’s sculpted to a classic silhouette from smooth calfskin leather with an almond-shaped toe and stretch side panels for ease of wear and then lined and soled in black leather, while a low stacked heel adds subtle elevation. Runs true to size.",
+        "quantityInCart": 0
+    },
+    {
+        "id": "2",
+        "brandName": "Saint Laurent",
+        "clothingName": "Logo grained-leather cardholder",
+        "clothingImage": "https://assetsprx.matchesfashion.com/img/product/1256931_1_large.jpg",
+        "price": "$255.00",
+        "description": "Saint Laurent's black cardholder is made in Italy from grained leather. It has a silver hot-stamped logo embossed on the front panel, and features two card slots on each side with one central slip pocket for notes and receipts. Lacquered edges ensure a streamlined finish.",
+        "quantityInCart": 0
+    },
+    {
+        "id": "3",
+        "brandName": "Saint Laurent",
+        "clothingName": "Striped brushed virgin wool sweater",
+        "clothingImage": "https://assetsprx.matchesfashion.com/img/product/1291168_1_large.jpg",
+        "price": "$1,150.00",
+        "description": "Saint Laurent’s black sweater encapsulates the house’s distinctively undone take on Parisian polish. It’s shaped to a relaxed fit in Italy from soft virgin wool that’s brushed for supreme softness and features a white-stripe, semi-raglan sleeves and classic ribbed trims. Fits true to size.",
+        "quantityInCart": 0
+    },
+    {
+        "id": "4",
+        "brandName": "Gucci",
+        "clothingName": "GG leather belt",
+        "clothingImage": "https://assetsprx.matchesfashion.com/img/product/1210699_1_large.jpg",
+        "price": "$435.00",
+        "description": "Gucci's black GG leather belt is crafted in Italy using a heat-stamped technique to lend it a subtle note of texture. It's shaped with a wide strap and secures with a large antiqued GG buckle – an archival design element from the 1970s.",
+        "quantityInCart": 0
+    },
+    {
+        "id": "5",
+        "brandName": "Gucci",
+        "clothingName": "Snake sterling-silver ring",
+        "clothingImage": "https://assetsprx.matchesfashion.com/img/product/1309719_1_large.jpg",
+        "price": "$289.00",
+        "description": "Alessandro Michele’s fascination with nature is articulated by this entrancing sterling-silver ring from Gucci's Garden jewellery line. It's crafted in Italy to depict two intertwining Kingsnakes – a house signature – and is finished with an intricately tetured surface.",
+        "quantityInCart": 0
+    },
+    {
+        "id": "6",
+        "brandName": "Gucci",
+        "clothingName": "Stitched-edge pinstripe wool trousers",
+        "clothingImage": "https://assetsprx.matchesfashion.com/img/product/1306839_1_large.jpg",
+        "price": "$1,254.00",
+        "description": "These charcoal-grey trousers display some of the key accents of Gucci’s AW19 menswear collection, which is inspired by traditional tailoring markings that read ‘Maison de l’Amour’ and ‘The Play of the Abnormal.’ The wool has traditional pinstripes and red and white stitching sealing the pockets and shaping the turn-up hems for a deconstructed edge. Fit runs true to size.",
+        "quantityInCart": 0
+    },
+    {
+        "id": "7",
+        "brandName": "Prada",
+        "clothingName": "Logo-plaque cotton-denim jacket",
+        "clothingImage": "https://assetsprx.matchesfashion.com/img/product/1283820_1_large.jpg",
+        "price": "$1,390.00",
+        "description": "Prada brings a refined touch to a workwear classic with the silver-tone metal and black enamel logo plaque at the chest pocket on this black jacket. It’s crafted from mid-weight cotton denim with a point collar and adjustable barrelled cuffs fitted with logo-embossed buttons. Fits true to size.",
+        "quantityInCart": 0
+    },
+    {
+        "id": "8",
+        "brandName": "Prada",
+        "clothingName": "Nylon backpack tote bag",
+        "clothingImage": "https://assetsprx.matchesfashion.com/img/product/1281648_1_large.jpg",
+        "price": "$1,295.00",
+        "description": "Prada’s black tote-backpack hybrid is made in Italy from durable nylon – a signature fabric of the house since the 1990s. It can be carried by the twin top handles or by the shoulder straps and features two cargo pockets on the front for a further utilitarian twist. Note the sophisticated Saffiano-leather accents and Prada Milano logo patch on the front.",
+        "quantityInCart": 0
+    },
+    {
+        "id": "9",
+        "brandName": "Burberry",
+        "clothingName": "TB-logo cotton-blend hooded sweatshirt",
+        "clothingImage": "https://assetsprx.matchesfashion.com/img/product/1302698_1_large.jpg",
+        "price": "$770.00",
+        "description": "Burberry’s black hooded sweatshirt features an embossed white TB monogram logo designed in collaboration with artist Peter Saville. It’s made in Italy from soft cotton-blend jersey to a relaxed fit with silver-tone metal eyelets at the drawstring for a polished finish. Runs true to size.",
+        "quantityInCart": 0
+    },
+    {
+        "id": "10",
+        "brandName": "Burberry",
+        "clothingName": "Press-stud pocket wool trousers",
+        "clothingImage": "https://assetsprx.matchesfashion.com/img/product/1266692_1_large.jpg",
+        "price": "$690.00",
+        "description": "These black Burberry trousers capture the contemporary mood of tailoring seen on the SS19 runway with press-stud flaps at the waistband. They’re Italian-crafted from wool and mohair for a classically sartorial texture that falls into a clean shape with pressed pleats for subtle definition. Fits true to size.",
+        "quantityInCart": 0
+    },
+    {
+        "id": "11",
+        "brandName": "Off-White",
+        "clothingName": "Unfinished logo-print backpack",
+        "clothingImage": "https://assetsprx.matchesfashion.com/img/product/1278025_1_large.jpg",
+        "price": "$645.00",
+        "description": "This black backpack is printed with an unfinished outline of Virgil Abloh’s signature cross-arrow logo on the front as a nod to the work-in-progress theme evident throughout Off-White’s Pre-AW19 collection. Crafted in Italy from technical twill, it has adjustable logo-jacquard shoulder straps and two zipped patch pockets.",
+        "quantityInCart": 0
+    },
+    {
+        "id": "12",
+        "brandName": "Off-White",
+        "clothingName": "Paint-splatter jeans",
+        "clothingImage": "https://assetsprx.matchesfashion.com/img/product/1278536_1_large.jpg",
+        "price": "$710.00",
+        "description": "Off-White’s AW19 collection includes these black jeans, which reflect the construction-inspired theme. They’re crafted in Italy to a panelled construction and hand-applied with multicoloured paint splatters for a well-worn look. Note the neon-pink cross-arrow logo plaque for a branded finish. Fit runs true to size.",
+        "quantityInCart": 0
+    }
+
+]
