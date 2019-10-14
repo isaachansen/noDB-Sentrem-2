@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 export default class Quantity extends Component {
@@ -8,21 +8,21 @@ export default class Quantity extends Component {
         this.state = { 
             quantity: 0
         }
-        this.updateQuantity = this.updateQuantity.bind(this);
+        // this.updateQuantity = this.updateQuantity.bind(this);
         this.increment = this.increment.bind(this); 
         this.decrement = this.decrement.bind(this);
     }
 
-updateQuantity(index) {
-    const newQuantity = {
-        new_quantity: this.state.quantity
-    }
-    axios.put(`/api/update_quantity/${index}`, newQuantity).then(res => {
-        this.setState({
-            quantity: res.data
-        })
-    })
-}
+// updateQuantity(index) {
+//     const newQuantity = {
+//         new_quantity: this.state.quantity
+//     }
+//     axios.put(`/api/update_quantity/${index}`, newQuantity).then(res => {
+//         this.setState({
+//             quantity: res.data
+//         })
+//     })
+// }
 
 increment() {
     this.setState({
@@ -43,12 +43,11 @@ decrement() {
         return(
             <div>
                 <button onClick={this.decrement}>-</button>
-                <div onChange={element => 
-                this.setState({
+                <div onChange={element => this.setState({
                     quantity: element.target.value
                 })
             }>{quantity}</div>
-                <button onClick={this.increment}>+</button>
+                <button className="increment" onClick={this.increment}>+</button>
             </div>
         );
     }

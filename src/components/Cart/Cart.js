@@ -17,9 +17,9 @@ const Cart = (props) =>  {
           />
           <span className='quantity'>
             {/* <Quantity index={props.index}/> */}
-          <button className='decrement'>-</button>
+          <button className='decrement' onClick={() => props.updateQuantity(props.id, 'decrease')}>-</button>
         <h2 className="quantity-cart">{props.quantity}</h2>
-          <button className='increment'>+</button>
+          <button className='increment'  onClick={() => props.updateQuantity(props.id, 'increase')}>+</button>
           </span>
         <h2 className="brand-cart">{props.brandName}</h2>
         <h3 className="clothing-title-cart">{props.clothesName}</h3>

@@ -15,7 +15,7 @@ class Shop extends Component {
     this.getAllItems = this.getAllItems.bind(this);
     this.moveIntoCart = this.moveIntoCart.bind(this);
     this.deleteFromCart = this.deleteFromCart.bind(this);
-    // this.updateQuantity = this.updateQuantity.bind(this);
+    this.updateQuantity = this.updateQuantity.bind(this);
   }
 
   componentDidMount() {
@@ -72,17 +72,14 @@ class Shop extends Component {
     
     }
 
-  //   updateQuantity(index) {
-  //     const newQuantity = {
-  //         new_quantity: this.state.quantity
-  //     }
-  //     axios.put(`/api/update_quantity/${index}`, newQuantity).then(res => {
-  //         this.setState({
-  //             cart: res.data
-  //         })
-  //     })
-  // }
-
+    updateQuantity(id, change) {
+      // change === string 'increase' || 'decrease'
+        axios.put(`/api/update_quantity/${id}/${change}`).then((response) => {
+          this.setState({
+            cart: response.data
+          })
+        })
+    }
   // updateQuantity(id) {
   //   const newQuantity = {
   //           new_quantity: this.state.quantity
@@ -125,6 +122,8 @@ class Shop extends Component {
           price={item.price}
           description={item.description}
           quantity={item.quantityInCart}
+          updateQuantity={this.updateQuantity}
+          id={item.id}
           // index={index}
           // deleteFromCart={this.deleteFromCart}
         />

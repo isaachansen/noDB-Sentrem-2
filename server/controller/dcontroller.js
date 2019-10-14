@@ -33,7 +33,7 @@ PushIntoCart: (req, res, next) => {
 // updateQuantity: (req, res, next) => {
 //     const {index} = req.params;
 //     const {new_quantity} = req.body;
-//     console.log("this is the muthafuckin cart", cart)
+//     console.log("this is the cart", cart)
 //     if(new_quantity === cart[index].quantityInCart) {
 //         res.status(200).send(cart)
 //     }
@@ -46,17 +46,21 @@ PushIntoCart: (req, res, next) => {
 // },
 
 updateQuantity: (req, res , next) => {
-    const {id} = req.params;
+    const {id, change} = req.params;
     const index = cart.findIndex(quantity => {
         return quantity.id === parseInt(id);
     });
     if(index !== -1) {
-        cart[index].quantityInCart++;
+
+        if(change === 'increase'){
+            cart[index].quantityInCart++;
+        }else {
+            cart[index].quantityInCart--
+        }
         res.status(200).send(cart)
     } else {
         res.status(404).send("could not update quantity")
     }
-    
 },
 deleteCart: (req, res, next) => {
     const deleteId = req.params.id;
