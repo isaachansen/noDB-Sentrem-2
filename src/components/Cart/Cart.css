@@ -17,3 +17,104 @@
     margin-top: 100px;
     /* position: sticky; */
   }
+
+  .cart-item {
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+  }
+
+  .cartIMG {
+    width: 200px;
+    height: auto;
+    margin-left: 15px;
+  }
+
+  .cartIMG:hover {
+    cursor: pointer;
+  }
+
+  .brand-cart {
+    font-size: 30px;
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    color: rgb(53, 53, 53);
+    margin-left: 15px;
+    font-weight: 700;
+  }
+
+  .clothing-title-cart {
+    margin-top: 4px;
+    font-size: 15px;
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    color: rgb(53, 53, 53);
+    margin-left: 15px;
+    font-weight: 600;
+  }
+
+  .price-cart {
+    font-size: 25px;
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 15px;
+    color: rgb(53, 53, 53);
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 6px;
+  }
+
+  .description-cart {
+    margin-top: 4px;
+    margin-left: 15px;
+    font-size: 15px;
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    color: rgb(53, 53, 53);
+    margin-right: 650px;
+    font-weight: 600;
+  }
+  
+  .quantity-cart {
+      font-size: 30px;
+      font-family: futura-pt, sans-serif;
+      font-style: normal;
+      color: rgb(53, 53, 53);
+      font-weight: 700;
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+
+  .quantity {
+      margin-left: 600px;
+      display: flex;
+  }
+
+  .increment {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    font-size: 15px;
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    color: rgb(53, 53, 53);
+    font-weight: 600;
+    outline: 0;
+  }
+
+  .decrement {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    font-size: 15px;
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    color: rgb(53, 53, 53);
+    font-weight: 600;
+    outline: 0;
+  }

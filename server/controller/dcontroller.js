@@ -26,5 +26,12 @@ PushIntoCart: (req, res, next) => {
     console.log("TYPE =", typeof req.body)
       cart.push(req.body);
       res.status(200).send(cart);
-    }
-}
+    },
+
+deleteCart: (req, res, next) => {
+    const deleteId = req.params.id;
+    const itemIndex = cart.findIndex(item => itemsData.id === deleteId)
+    cart.splice(itemIndex, 1);
+    res.status(200).send(cart)
+},
+};

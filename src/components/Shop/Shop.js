@@ -12,10 +12,13 @@ class Shop extends Component {
     };
     this.getAllItems = this.getAllItems.bind(this);
     this.moveIntoCart = this.moveIntoCart.bind(this);
+    this.deleteFromCart = this.deleteFromCart.bind(this);
   }
 
   componentDidMount() {
     this.getAllItems();
+    this.moveIntoCart();
+    this.deleteFromCart();
   }
 
   getAllItems() {
@@ -29,16 +32,14 @@ class Shop extends Component {
       .catch(err => console.log(err));
   }
 
-  moveIntoCart(brandName, clothingName, clothingImage, price, description) {
-    // console.log("CART START")
-    // console.log("brandName =", brandName)
-    // console.log("clothingImage =", clothingImage)
+  moveIntoCart(brandName, clothingName, clothingImage, price, description, quantityInCart) {
     const cartItems = {
       brandName: brandName,
       clothingName: clothingName,
       clothingImage: clothingImage,
       price: price,
-      description: description
+      description: description,
+      quantityInCart: quantityInCart
     };
     axios.post("/api/push_into_cart", cartItems).then(res => {
       // console.log("this is post response", res.data);
@@ -48,17 +49,25 @@ class Shop extends Component {
     });
   }
 
+  deleteFromCart(brandName, clothingName, clothingImage, price, description, quantityInCart) {
+    const cartItems = {
+      brandName: brandName,
+      clothingName: clothingName,
+      clothingImage: clothingImage,
+      price: price,
+      description: description,
+      quantityInCart: quantityInCart
+    }
+    axios.delete("/api/delete_from_cart", cartItems).then(res => {
+      this.setState({
+        cart: res.data
+      })
+    })
+  }
+
   render() {
     const { items, cart } = this.state;
     const mappedItems = items.map(item => {
-      // console.log("ITEM =", item.clothingImage)
-      // let test1 = {
-      //   brandName: item.brandName,
-      //   clothingName: item.clothingName,
-      //   clothingImage: item.clothingImage,
-      //   price: item.price,
-      //   description: item.description
-      // };
       return (
         <div key={item.id}>
           <div className="image-container">
@@ -71,17 +80,16 @@ class Shop extends Component {
           <h2 className="brand">{item.brandName}</h2>
           <h3 className="clothing-title">{item.clothingName}</h3>
           <h2 className="price">{item.price}</h2>
-          <button className="btn" onClick={() => this.moveIntoCart(item.brandName, item.clothingName, item.clothingImage, item.price, item.description)}>
-            Add To Cart
+          <button className="btn" onClick={() => this.moveIntoCart(item.brandName, item.clothingName, item.clothingImage, item.price, item.description, item.quantityInCart)}>
+            ADD TO CART
           </button>
         </div>
       );
     });
 
     const mappedCart = cart.map(item => {
-      console.log("CART =", cart)
-      console.log("ITEM =", item)
       return (
+        <div>
         <Cart 
           image={item.clothingImage}
           brandName={item.brandName}
@@ -90,8 +98,14 @@ class Shop extends Component {
           description={item.description}
           quantity={item.quantityInCart}
         />
+        <button className="btn-delete" onClick={() => this.deleteFromCart(item.brandName, item.clothingName, item.clothingImage, item.price, item.description, item.quantityInCart)}>
+          REMOVE
+        </button>
+        </div>
+        
       )
     })
+
     return (
       <div className="shop">
         <div className="title-shop">
