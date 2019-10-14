@@ -9,7 +9,6 @@
   height: auto;
 }
 
-
 .image-container:hover {
   cursor: pointer;
   -webkit-transform: scale(0.8);
@@ -114,4 +113,8 @@
   cursor: pointer;
   color: white;
   background-color: rgb(53, 53, 53);
+}
+
+.btn-delete:focus {
+  outline:0;
 }

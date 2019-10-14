@@ -1,9 +1,11 @@
 import React from 'react';
 import './Cart.css'
+// import Quantity from '../Quantity/Quantity'
 // import Shop from '../Shop/Shop'
 // import axios from 'axios'
 
-const Cart = (props) => {
+
+const Cart = (props) =>  {
         console.log("PROPS =", props)
         return (
         <div key={props.id}>
@@ -14,6 +16,7 @@ const Cart = (props) => {
             alt=""
           />
           <span className='quantity'>
+            {/* <Quantity index={props.index}/> */}
           <button className='decrement'>-</button>
         <h2 className="quantity-cart">{props.quantity}</h2>
           <button className='increment'>+</button>
@@ -22,7 +25,8 @@ const Cart = (props) => {
         <h3 className="clothing-title-cart">{props.clothesName}</h3>
         <h2 className="price-cart">{props.price}</h2>
         <h3 className="description-cart">{props.description}</h3>
-        {/* <h2 className="quantity-cart">{props.quantity}</h2> */}
+        <div>
+        </div>
         </div>
       </div>
     )

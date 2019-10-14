@@ -10,7 +10,7 @@ class Header extends Component {
         <ul>
                 <li><a href="#/">home</a></li>
                 <li><a href="#/">shop</a></li>
-                <li className="scart"><a href="#/"><FaShoppingCart /></a></li>
+                <li className="scart"><a href="#bottom"><FaShoppingCart /></a></li>
         </ul>
         </div>
       </header>

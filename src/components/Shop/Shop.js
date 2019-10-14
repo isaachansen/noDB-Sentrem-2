@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./Shop.css";
 import Cart from "../Cart/Cart";
+// import Quantity from "../Quantity/Quantity"
+
 
 class Shop extends Component {
   constructor(props) {
@@ -13,6 +15,7 @@ class Shop extends Component {
     this.getAllItems = this.getAllItems.bind(this);
     this.moveIntoCart = this.moveIntoCart.bind(this);
     this.deleteFromCart = this.deleteFromCart.bind(this);
+    // this.updateQuantity = this.updateQuantity.bind(this);
   }
 
   componentDidMount() {
@@ -32,8 +35,9 @@ class Shop extends Component {
       .catch(err => console.log(err));
   }
 
-  moveIntoCart(brandName, clothingName, clothingImage, price, description, quantityInCart) {
+  moveIntoCart(brandName, clothingName, clothingImage, price, description, quantityInCart, id) {
     const cartItems = {
+      id,
       brandName: brandName,
       clothingName: clothingName,
       clothingImage: clothingImage,
@@ -41,6 +45,7 @@ class Shop extends Component {
       description: description,
       quantityInCart: quantityInCart
     };
+    console.log("Cart items", cartItems)
     axios.post("/api/push_into_cart", cartItems).then(res => {
       // console.log("this is post response", res.data);
       this.setState({
@@ -49,21 +54,44 @@ class Shop extends Component {
     });
   }
 
-  deleteFromCart(brandName, clothingName, clothingImage, price, description, quantityInCart) {
-    const cartItems = {
-      brandName: brandName,
-      clothingName: clothingName,
-      clothingImage: clothingImage,
-      price: price,
-      description: description,
-      quantityInCart: quantityInCart
-    }
-    axios.delete("/api/delete_from_cart", cartItems).then(res => {
+  deleteFromCart(id) {
+    axios.delete(`/api/delete_from_cart/${id}`).then(res => {
       this.setState({
         cart: res.data
       })
-    })
-  }
+    }
+    )}
+
+    removeFromCart(index) {
+      let copiedCart = [...this.state.cart];
+      copiedCart.splice(index, 1);
+      console.log(copiedCart)
+      this.setState({
+        cart: copiedCart
+      })
+    
+    }
+
+  //   updateQuantity(index) {
+  //     const newQuantity = {
+  //         new_quantity: this.state.quantity
+  //     }
+  //     axios.put(`/api/update_quantity/${index}`, newQuantity).then(res => {
+  //         this.setState({
+  //             cart: res.data
+  //         })
+  //     })
+  // }
+
+  // updateQuantity(id) {
+  //   const newQuantity = {
+  //           new_quantity: this.state.quantity
+  //         }
+
+  //   axios.put(`/api/update_quantity/${id}`).then(res => {
+  //     this.props.newQuantity(res.data);
+  //   })
+  // }
 
   render() {
     const { items, cart } = this.state;
@@ -80,14 +108,14 @@ class Shop extends Component {
           <h2 className="brand">{item.brandName}</h2>
           <h3 className="clothing-title">{item.clothingName}</h3>
           <h2 className="price">{item.price}</h2>
-          <button className="btn" onClick={() => this.moveIntoCart(item.brandName, item.clothingName, item.clothingImage, item.price, item.description, item.quantityInCart)}>
+          <button className="btn" onClick={() => this.moveIntoCart(item.brandName, item.clothingName, item.clothingImage, item.price, item.description, item.quantityInCart, item.id)}>
             ADD TO CART
           </button>
         </div>
       );
     });
 
-    const mappedCart = cart.map(item => {
+    const mappedCart = cart.map((item, index) => {
       return (
         <div>
         <Cart 
@@ -97,15 +125,20 @@ class Shop extends Component {
           price={item.price}
           description={item.description}
           quantity={item.quantityInCart}
+          // index={index}
+          // deleteFromCart={this.deleteFromCart}
         />
-        <button className="btn-delete" onClick={() => this.deleteFromCart(item.brandName, item.clothingName, item.clothingImage, item.price, item.description, item.quantityInCart)}>
+        <button className="btn-delete" onClick={() => {this.deleteFromCart(item.id)}}>
           REMOVE
         </button>
+        {/* <button className="btn-delete" onClick={() => this.updateQuantity(index)}>
+          UPDATE QUANTITY
+        </button> */}
         </div>
         
       )
     })
-
+    console.log(this.state.cart)
     return (
       <div className="shop">
         <div className="title-shop">
